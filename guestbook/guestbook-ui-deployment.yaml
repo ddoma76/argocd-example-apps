@@ -14,11 +14,11 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-        env:
-        - name: GITOPS_LAB
-          value: "true"
         #- image: gcr.io/google-samples/gb-frontend:v5
         - image: php:8-apache
           name: guestbook-ui
+          env:
+          - name: GITOPS_LAB
+            value: "true"
           ports:
             - containerPort: 80
